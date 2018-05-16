@@ -9,4 +9,5 @@ export LANG=en_US.UTF-8
 echo 'LANG="'$LANG'"' > /mnt/etc/locale.conf
 locale-gen
 cp ./lilo /mnt/root/
-arch-chroot /mnt
+
+echo "You can reboot now..."
