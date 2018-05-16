@@ -9,3 +9,7 @@ echo 'Defaults !env_editor, editor="/usr/bin/vim:/usr/bin/vi:/usr/bin/nano"' >> 
 echo 'Defaults timestamp_timeout=15' >> /etc/sudoers
 echo 'Defaults passprompt="[sudo] password for %u: "' >> /etc/sudoers
 echo 'Defaults lecture=never' >> /etc/sudoers
+
+su jbfreels
+cd /tmp
+git clone https://aur.archlinux.org/trizen.git && cd trizen && mkpkg -si --noconfirm
