@@ -19,6 +19,8 @@ Edit locale.gen `vim /etc/locale.gen` and uncommment en_US.UTF-8
 
 `locale-gen`
 
+`arch-chroot /mnt`
+
 ## Networking
 `systemctl enable dhcpcd@eth0.service`
 
