@@ -7,6 +7,8 @@
 
 `mkdir /mnt && mount /dev/sdc1 /mnt`
 
+`arch-chroot /mnt`
+
 `pacstrap -i /mnt base base-devel linux-lts linux-lts-headers vim --ignore linux`
 
 `genfstab -U /mnt >> /mnt/etc/fstab`
