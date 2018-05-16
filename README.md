@@ -17,8 +17,18 @@ Edit locale.gen `vim /etc/locale.gen` and uncommment en_US.UTF-8
 
 `echo LANG=en_US.UTF-8 > /etc/locale.conf && export LANG=en_US.UTF-8`
 
+`locale-gen`
+
 ## Networking
 `systemctl enable dhcpcd@eth0.service`
+
+disable weird network names and use eth0
+
+`ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules`
+
+set hostname
+
+`echo ryuk > /etc/hostname`
 
 ## Pacman
 Edit `/etc/pacman.conf` and uncomment...
@@ -51,9 +61,12 @@ Create new user
 
 `grub-mkconfig -o /boot/grub/grub.cfg`
 
-# First boot
+## First boot
 `exit`
 
 `umount /mnt && reboot`
+
+# Post Install
+`pacman -S alsa-utils nvidia-dkms nvidia-utils`
 
 
