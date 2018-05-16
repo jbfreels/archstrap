@@ -1,0 +1,12 @@
+mkfs.ext4 /dev/sdc1
+mkswap /dev/sdc5
+swapon /dev/sdc5
+mount /dev/sdc1 /mnt
+pacstrap -i /mnt base base-devel linux-lts linux-lts-headers vim git --ignore linux
+genfstab -U /mnt >> /mnt/etc/fstab
+ln -s /usr/share/zoneinfo/America/New_York /etc/localtime
+export LANG=en_US.UTF-8
+echo 'LANG="'$LANG'"' > /mnt/etc/locale.conf
+locale-gen
+cp ./lilo /mnt/root/
+arch-chroot /mnt
