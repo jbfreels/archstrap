@@ -48,7 +48,7 @@ Set root password
 
 Create new user
 
-`useradd -m -g users -G wheel,storage,power -s /bin/bash jbfreels && passwd jbfreels`
+`useradd -m -g users -G wheel -s /bin/bash jbfreels && passwd jbfreels`
 
 `pacman -S sudo`
 
