@@ -11,5 +11,26 @@ echo 'Defaults passprompt="[sudo] password for %u: "' >> /etc/sudoers
 echo 'Defaults lecture=never' >> /etc/sudoers
 
 su jbfreels
+
+#
+# install trizen
+#
 cd /tmp
 git clone https://aur.archlinux.org/trizen.git && cd trizen && mkpkg -si --noconfirm
+
+#
+# install xorg-server
+#
+pacman -S xorg-server xorg-apps xorg-xinit xorg-xkill xorg-xinput xf86-input-libinput
+
+#
+# disable intel video
+#
+echo "install i915 /usr/bin/false" > /etc/modprobe.d/blacklist.conf
+echo "install intel_agp /usr/bin/false" >> /etc/modprobe.d/blacklist.conf
+
+#
+# install UI
+#
+pacman -Sy lightdm lightdm-gtk-greeter i3-gaps
+systemctl enable lighdm.service
