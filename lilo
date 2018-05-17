@@ -34,3 +34,8 @@ echo "install intel_agp /usr/bin/false" >> /etc/modprobe.d/blacklist.conf
 #
 pacman -Sy lightdm lightdm-gtk-greeter i3-gaps
 systemctl enable lighdm.service
+
+#
+# extras
+#
+trizen -S feh ranger scrot rofi imagemagick xclip w3m --noconfirm
