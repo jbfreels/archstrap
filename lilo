@@ -38,4 +38,4 @@ systemctl enable lighdm.service
 #
 # extras
 #
-trizen -S feh ranger scrot rofi imagemagick xclip w3m polybar --noconfirm
+trizen -S feh ranger scrot rofi imagemagick xclip w3m polybar rxvt-unicode dunst google-chrome --noconfirm
